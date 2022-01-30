@@ -1,0 +1,24 @@
+﻿@using sportsShopWebApp.Models
+
+<div style="display:flex;justify-content:space-evenly;margin:3vh 0 7vh 0;">
+    <button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("AllShoes","Shoes", new {option = "Discount"})'">Click For ShoesWithDiscount </button>
+</div>
+
+<div class="card-deck" style="display:flex;justify-content: space-evenly; flex-wrap:wrap">
+    @foreach (Shoe item in Model)
+    {
+        <div class="card" style="width:30%">
+            <img class="card-img" src="@item.imageData" alt="Card image cap" style="width: 200px;height: 200px">
+            <div class="card-body">
+                <h4 class="card-title">Type @item.typeOfShoe</h4>
+                <h4 class="card-text">Company : @item.company</h4>
+            </div>
+            <div class="card-footer">
+                <h4 class="text-muted">Price : @item.price</h4>
+            </div>
+        </div>
+    }
+</div>
+
+
+

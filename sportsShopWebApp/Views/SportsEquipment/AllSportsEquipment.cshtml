@@ -1,0 +1,28 @@
+﻿
+@using sportsShopWebApp.Models
+
+<div style="display:flex;justify-content:space-evenly;margin:3vh 0 7vh 0;">
+    <button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("AllSportsEquipment","SportsEquipment", new {selectedType = "SoccerEquipment"})'">Click For AllSoccerEquipment </button>
+    <button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("AllSportsEquipment","SportsEquipment", new {selectedType = "BasketballEquipment"})'">Click For AllBasketballEquipment</button>
+    <button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("AllSportsEquipment","SportsEquipment", new {selectedType = "SortedByASCOrder"})'">Sorted By Lowest Price</button>
+    <button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("AllSportsEquipment","SportsEquipment", new {selectedType = "SortedByDESOrder"})'">Sorted By Higest Price</button>
+</div>
+
+<div class="card-deck" style="display:flex;justify-content: space-evenly; flex-wrap:wrap">
+    @foreach (sportsEquipment item in Model)
+    {
+        <div class="card" style="width:30%">
+            <img class="card-img" src="@item.imageData" alt="Card image cap" style="width: 200px;height: 200px">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Type @item.category>
+                    <h4 class="card-text">Company : @item.company</h4>
+            </div>
+            <div class="card-footer">
+                <h4 class="text-muted">Price : @item.price</h4>
+            </div>
+        </div>
+    }
+</div>
+
+

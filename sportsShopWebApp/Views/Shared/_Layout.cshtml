@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://kit.fontawesome.com/658055baba.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("FroadApp", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("ManagersView", "Managers", "Managers")</li>
+                    <li class="dropdown btn btn-dark">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:teal;color:#000">
+                            Categories
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/Shoes/AllShoes">AllShoes</a><br />
+                            <a class="dropdown-item" href="/Shirts/AllShirts">AllShirts</a><br />
+                            <a class="dropdown-item" href="/Pants/AllPants">AllPants</a><br />
+                            <a class="dropdown-item" href="/SportsEquipment/AllSportsEquipment">AllSportsEquipment</a><br />
+                        </div>
+                    </li>
+                </ul>
+                <div style="display:flex;justify-content:flex-end;">
+                    <img class="img-circle" src="~/Content/Image/IMG-20211107-WA0014.jpg" style="width:45px;height:45px" />
+                    <img class="img-circle" src="~/Content/Image/IMG-20211107-WA0016.jpg" style="width:45px;height:45px" />
+                    <img class="img-circle" src="https://cdn.pixabay.com/photo/2021/10/02/07/40/ink-6674441__340.jpg" style="width:45px;height:45px" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer style="background-color:#000;height:6vh;text-align:center;margin-top:10vh;">
+            <div>
+                <a href="https://www.linkedin.com/in/aschalew-azage/">Linkdin <i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/">FaceBook <i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/Ascha10">GitHub <i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
